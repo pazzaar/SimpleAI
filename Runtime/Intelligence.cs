@@ -9,6 +9,9 @@ namespace SimpleAI {
 
         static List<(float, ActionBase, ActionSet)> temp = new List<(float, ActionBase, ActionSet)>();
         public (ActionBase, ActionSet) SelectAction(IContext ctx, float minScore) {
+
+            AIDebugger.CurrentDebugTarget = ctx;
+
 #if UNITY_EDITOR
             AIDebugger.LogLine(ctx, "");
 #endif
@@ -35,15 +38,17 @@ namespace SimpleAI {
                     var score = action.Score(ctx);
                     score *= actionSet.finalWeight;
 
-                    if (score < minScore) {
-#if UNITY_EDITOR
-                        AIDebugger.LogLine(ctx, $"<i>{action.name}</i> {score:0.00} < {minScore:0.00}");
-#endif
-                        continue;
-                    }
                     if (!action.CheckProceduralPreconditions(ctx)) {
 #if UNITY_EDITOR
                         AIDebugger.LogLine(ctx, $"<color=grey><i>{action.name}</i> precondition</color>");
+#endif
+                        continue;
+                    }
+
+                    if (score < minScore)
+                    {
+#if UNITY_EDITOR
+                        AIDebugger.LogLine(ctx, $"<i>{action.name}</i> {score:0.00} < {minScore:0.00}");
 #endif
                         continue;
                     }
