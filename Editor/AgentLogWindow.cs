@@ -34,7 +34,7 @@ namespace SimpleAI {
         }
 
         public void LogLine(string text) {
-            var linesToKeep = 1000;
+            var linesToKeep = 100000;
             if (logLines.Length > linesToKeep) {
                 var off = 0;
                 for (; off < linesToKeep - 1; ++off) {
