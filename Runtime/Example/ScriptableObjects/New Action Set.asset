@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f402cf9d82e05e4988e24ee63fdcb43, type: 3}
+  m_Name: New Action Set
+  m_EditorClassIdentifier: 
+  Checks:
+  - {fileID: 11400000, guid: e49a041036bd9e546bac73502538fe15, type: 2}
+  actions:
+  - {fileID: 11400000, guid: c397fcd89e83d8842a83cedd6321eba8, type: 2}
+  - {fileID: 11400000, guid: fdbc8e6abd073fb4bab9f6fc447b9133, type: 2}
+  finalWeight: 2
