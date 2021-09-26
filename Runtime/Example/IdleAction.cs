@@ -11,7 +11,7 @@ public class IdleAction : Action<ActorAIContext>
 
         while (CheckProceduralPreconditions(ctx))
         {
-            Debug.Log("idling...");
+            //Debug.Log("idling...");
             yield return null;
         }
 

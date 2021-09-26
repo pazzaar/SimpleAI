@@ -17,4 +17,5 @@ MonoBehaviour:
   actions:
   - {fileID: 11400000, guid: c397fcd89e83d8842a83cedd6321eba8, type: 2}
   - {fileID: 11400000, guid: fdbc8e6abd073fb4bab9f6fc447b9133, type: 2}
+  - {fileID: 11400000, guid: 8748a4bcfa979294ea75b0290c2e2eb4, type: 2}
   finalWeight: 2

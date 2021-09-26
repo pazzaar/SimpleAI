@@ -25,6 +25,7 @@ public class ActorAIContext : IContext
             2 => IsArmed ? 1 : 0,
             3 => AttackSomething ? .5f : 0,
             4 => CheckProximity(),
+            5 => .4f,
             _ => throw new Exception("case missing")
         };
 
@@ -35,6 +36,7 @@ public class ActorAIContext : IContext
             "Is Armed",
             "AttackSomething",
             "Proximity",
+            "NothingToDo (Idle)",
         };
 
     public float CheckProximity()

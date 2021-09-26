@@ -9,8 +9,9 @@ public class Actor : MonoBehaviour
     ActorAIContext ctx;
     AIAgent<ActorAIContext> ai;
 
+    public AILocomotion locomotion;
+
     float nextContextUpdateTime;
-    float nextAttackTime;
 
     public bool something;
     public Transform enemy;
@@ -23,6 +24,7 @@ public class Actor : MonoBehaviour
     {
         ctx = new ActorAIContext() { Actor = this };
         ai = new AIAgent<ActorAIContext>(Intelligence);
+        locomotion = GetComponent<AILocomotion>();
     }
 
     public void Update()
@@ -35,20 +37,16 @@ public class Actor : MonoBehaviour
             //ctx.BestTarget = ...;
             //ctx.BestSmartObject = ai.SelectSmartObject(ctx, ctx.SmartObjects);
             //ctx.IsArmed = ...;
+
+
+
             ctx.AttackSomething = something;
             ctx.enemyPosition = enemy.position;
+
+            Debug.Log("ticking...");
         }
 
         ai.Tick(ctx);
     }
 
-    public void Attack()
-    {
-        if (Time.time < nextAttackTime)
-            return;
-
-        nextAttackTime = Time.time + 1;
-        Debug.Log($"Attacking {ctx.BestTarget}");
-    }
 }
-
